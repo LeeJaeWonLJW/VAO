@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background2">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="30.6dp"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/vao_logo_03" />
+
+    <ImageView
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="614dp"
+        android:background="@drawable/vao_card_01"
+        android:src="@drawable/vao_card"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/vao_icon_01"
+        android:adjustViewBounds="true"
+        android:background="@drawable/vao_circle"
+        android:elevation="5dp"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        android:onClick="onclickLoginSubExit"/>
+
+    <LinearLayout
+        android:id="@+id/processGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <View
+            android:id="@+id/lineFirst"
+            android:layout_width="24dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="9dp"
+            android:background="@color/colorMint"/>
+
+        <TextView
+            android:id="@+id/circleFirst"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="4dp"
+            android:gravity="center"
+            android:background="@drawable/vao_circle_mint"
+            android:fontFamily="@font/notosans_semibold"
+            android:textSize="10sp"
+            android:lineSpacingExtra="10sp"
+            android:text="1"
+            android:includeFontPadding="false"
+            android:textColor="#FFFFFF"/>
+
+        <View
+            android:id="@+id/lineSecond"
+            android:layout_width="72dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginStart="4dp"
+            android:background="@color/colorGray"/>
+
+        <TextView
+            android:id="@+id/circleSecond"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="4dp"
+            android:gravity="center"
+            android:background="@drawable/vao_circle_gray"
+            android:fontFamily="@font/notosans_semibold"
+            android:textSize="10sp"
+            android:lineSpacingExtra="10sp"
+            android:text="2"
+            android:includeFontPadding="false"
+            android:textColor="@color/colorGray"/>
+
+        <View
+            android:id="@+id/lineThird"
+            android:layout_width="24dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginStart="4dp"
+            android:background="@color/colorGray"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtTitleJoin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#1e2a53"
+        android:lineSpacingExtra="0sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:fontFamily="@font/notosans_semibold"
+        android:text="지갑 계정 만들기"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="26dp"
+        android:fontFamily="@font/notosans_regular"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="8sp"
+        android:textColor="#9da1ad"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleJoin"
+        android:text="아이디" />
+
+    <EditText
+        android:id="@+id/editTextId"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/vao_edittext"
+        android:ems="10"
+        android:fontFamily="@font/notosans_regular"
+        android:inputType="textPersonName"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:textColor="@color/colorText"
+        android:textCursorDrawable="@color/colorText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/idErrorMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:textColor="#fc5f6b"
+        android:lineSpacingExtra="10sp"
+        android:text="중복된 아이디 입니다."
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/notosans_regular"
+        android:includeFontPadding="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextId"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="29dp"
+        android:fontFamily="@font/notosans_regular"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="8sp"
+        android:textColor="#9da1ad"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextId"
+        android:text="비밀번호" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="40dp"
+        android:ems="10"
+        android:fontFamily="@font/notosans_regular"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        android:background="@drawable/vao_edittext"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:textColor="@color/colorText"
+        android:textCursorDrawable="@color/colorText" />
+
+    <TextView
+        android:id="@+id/passwordErrorMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:textColor="#fc5f6b"
+        android:lineSpacingExtra="10sp"
+        android:text="대문자, 소문자, 숫자, 특수기호 포함 8자이상 입력 해야됩니다."
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/notosans_regular"
+        android:includeFontPadding="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="29dp"
+        android:fontFamily="@font/notosans_regular"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="8sp"
+        android:textColor="#9da1ad"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
+        android:text="비밀번호 확인" />
+
+    <EditText
+        android:id="@+id/editTextPasswordConfirm"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="40dp"
+        android:ems="10"
+        android:fontFamily="@font/notosans_regular"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        android:background="@drawable/vao_edittext"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:textColor="@color/colorText"
+        android:textCursorDrawable="@color/colorText" />
+
+    <TextView
+        android:id="@+id/passwordConfirmErrorMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:textColor="#fc5f6b"
+        android:lineSpacingExtra="10sp"
+        android:text="비밀번호가 일치 하지않습니다."
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/notosans_regular"
+        android:includeFontPadding="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordConfirm"
+        android:visibility="invisible"/>
+
+    <ImageButton
+        android:id="@+id/checkBox"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/vao_chkbox"
+        android:background="@drawable/vao_chkbox_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordConfirm"
+        android:onClick="onclickChkBox"/>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="#418aff"
+        android:lineSpacingExtra="12sp"
+        android:text="이용약관"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="43dp"
+        app:layout_constraintStart_toEndOf="@+id/checkBox"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordConfirm"
+        android:includeFontPadding="false"
+        android:fontFamily="@font/notosans_regular" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="#9da1ad"
+        android:lineSpacingExtra="12sp"
+        android:text="에 동의 하시겠습니까?"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="43dp"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordConfirm"
+        android:includeFontPadding="false"
+        android:fontFamily="@font/notosans_regular" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="38dp"
+        android:background="@drawable/vao_btn_gradient"
+        android:fontFamily="@font/notosans_semibold"
+        android:letterSpacing="0.08"
+        android:lineSpacingExtra="6sp"
+        android:onClick="onclickJoinNext"
+        android:text="다음"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/vao_footer"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/notosans_regular"
+        android:gravity="center_horizontal"
+        android:includeFontPadding="false"
+        android:letterSpacing="0.06"
+        android:lineSpacingExtra="8sp"
+        android:text="계정이 있나요? 로그인 하기"
+        android:textColor="#9da1ad"
+        android:textSize="12sp"
+        android:onClick="onclickGoLoginSub"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

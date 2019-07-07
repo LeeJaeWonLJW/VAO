@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorProgessbarBackground">#FFFFFF</color>
+    <color name="colorProgessbar">#418aff</color>
+    <color name="colorRed">#fc5f6b</color>
+    <color name="colorBlue">#418aff</color>
+    <color name="colorStatusBar1">#1c2853</color>
+    <color name="colorText">#1e2a53</color>
+    <color name="colorNavbarDefault">#1e2a53</color>
+    <color name="colorSysNavbar1">#345e97</color>
+    <color name="colorSysNavbar2">#FFFFFF</color>
+    <color name="colorMint">#5bcbb5</color>
+    <color name="colorGray">#dee1eb</color>
+    <color name="colorWhite">#FFFFFF</color>
+</resources>
