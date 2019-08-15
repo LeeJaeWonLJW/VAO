@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageButton
+        android:id="@+id/sendWhoPageBack"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/vao_icon_keyboard_back"
+        android:scaleType="fitCenter"
+        android:padding="3dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="onclickSendWhoPageBack"/>
+
+    <TextView
+        android:id="@+id/sendWhoPageTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        android:text="1.5 KP 송금하기"
+        android:textSize="16sp"
+        android:background="@android:color/transparent"
+        android:textColor="@color/colorSlate"
+        android:lineSpacingExtra="4sp"
+        android:lineHeight="20sp"
+        android:fontFamily="@font/notosans_semibold"
+        app:layout_constraintStart_toEndOf="@+id/sendWhoPageBack"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/sendWhoSearch"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/vao_search"
+        android:scaleType="fitCenter"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sendWhoPageBack"/>
+    
+    <EditText
+        android:id="@+id/sendWhoAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:layout_marginStart="8dp"
+        android:background="@android:color/transparent"
+        android:textSize="16sp"
+        android:textColor="@color/colorDodgerBlue"
+        android:lineSpacingExtra="4sp"
+        android:fontFamily="@font/notosans_regular"
+        android:hint="받는 지갑 주소를 입력"
+        app:layout_constraintTop_toBottomOf="@+id/sendWhoPageBack"
+        app:layout_constraintStart_toEndOf="@+id/sendWhoSearch"/>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="12dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@+id/sendWhoSearch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    
+    <View
+        android:id="@+id/sendBox"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/sendBoxCancel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="14dp"
+        android:layout_marginEnd="12dp"
+        android:text="취소"
+        android:textSize="16sp"
+        android:textColor="@color/colorLightBlueGray"
+        android:letterSpacing="0.08"
+        android:lineSpacingExtra="6sp"
+        android:lineHeight="22sp"
+        android:fontFamily="@font/notosans_semibold"
+        android:background="@drawable/vao_btn_white_gray"
+        app:layout_constraintBottom_toBottomOf="@+id/sendBox"
+        app:layout_constraintStart_toStartOf="@+id/sendBox"
+        app:layout_constraintTop_toTopOf="@+id/sendBox"
+        app:layout_constraintEnd_toStartOf="@+id/sendBoxSend"
+        android:elevation="8dp"
+        android:onClick="onclickSendBoxCancel"/>
+
+    <Button
+        android:id="@+id/sendBoxSend"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="14dp"
+        android:layout_marginStart="12dp"
+        android:text="보내기"
+        android:textSize="16sp"
+        android:textColor="#ffffff"
+        android:letterSpacing="0.08"
+        android:lineSpacingExtra="6sp"
+        android:lineHeight="22sp"
+        android:fontFamily="@font/notosans_semibold"
+        android:background="@drawable/vao_btn_gradient"
+        app:layout_constraintBottom_toBottomOf="@+id/sendBox"
+        app:layout_constraintStart_toEndOf="@+id/sendBoxCancel"
+        app:layout_constraintEnd_toEndOf="@+id/sendBox"
+        app:layout_constraintTop_toTopOf="@+id/sendBox"
+        android:elevation="8dp"
+        android:onClick="onclickSendBoxSend"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

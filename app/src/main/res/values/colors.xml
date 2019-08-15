@@ -12,4 +12,9 @@
     <color name="colorMint">#5bcbb5</color>
     <color name="colorGray">#dee1eb</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorSlate">#4c5264</color>
+    <color name="colorDodgerBlue">#418aff</color>
+    <color name="colorBlueyGray">#9da1ad</color>
+    <color name="colorDarkBlueGray">#1e2a53</color>
+    <color name="colorLightBlueGray">#caced9</color>
 </resources>

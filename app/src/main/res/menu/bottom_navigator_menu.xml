@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/bottom_navigator_notice"
+        android:icon="@drawable/vao_nav_notice"
+        android:title=""
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/bottom_navigator_send"
+        android:icon="@drawable/vao_nav_send"
+        android:title=""
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/bottom_navigator_gift"
+        android:icon="@drawable/vao_nav_gift"
+        android:title=""
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/bottom_navigator_wallet"
+        android:icon="@drawable/vao_nav_wallet"
+        android:title=""
+        app:showAsAction="ifRoom" />
+</menu>

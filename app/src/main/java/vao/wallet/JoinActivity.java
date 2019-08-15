@@ -1,16 +1,26 @@
 package vao.wallet;
 
 import android.content.Intent;
-import android.graphics.Paint;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+import vao.wallet.server.RetrofitAuthData;
+import vao.wallet.server.RetrofitAuthService;
 
 public class JoinActivity extends AppCompatActivity {
 
@@ -143,10 +153,47 @@ public class JoinActivity extends AppCompatActivity {
         }
 
         if (isId && isPassword && isPasswordConfirm && isCheckBoxChecked) {
-            Intent intent = new Intent(JoinActivity.this, TwoWayPasswordAcitivty.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-            startActivity(intent);
-            finish();
+            startActivityForResult(new Intent(getApplicationContext(), DimLoadingActivity.class).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION), 1003);
+
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(RetrofitAuthService.URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+            RetrofitAuthService retrofitAuthService = retrofit.create(RetrofitAuthService.class);
+
+            Map<String, String> checkData = new HashMap<>();
+            checkData.put("username", editTextId.getText().toString());
+
+            retrofitAuthService.authCheck(checkData).enqueue(new Callback<RetrofitAuthData>() {
+                @Override
+                public void onResponse(Call<RetrofitAuthData> call, Response<RetrofitAuthData> response) {
+                    if (response.isSuccessful()) {
+                        RetrofitAuthData body = response.body();
+                        if (body != null) {
+                            Toast.makeText(getApplicationContext(), body.getMessage(), Toast.LENGTH_SHORT).show();
+
+                            if (body.getSuccess()) {
+                                finishActivity(1003);
+                                Intent intent = new Intent(JoinActivity.this, TwoWayPasswordAcitivty.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                                intent.putExtra("username", editTextId.getText().toString());
+                                intent.putExtra("password", editTextPassword.getText().toString());
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                finishActivity(1003);
+                                editTextId.setBackgroundResource(R.drawable.vao_edittext_red);
+                                idErrorMsg.setVisibility(View.VISIBLE);
+                            }
+                        }
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<RetrofitAuthData> call, Throwable t) {
+
+                }
+            });
         }
     }
 
